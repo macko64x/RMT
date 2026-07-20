@@ -1,0 +1,3 @@
+# Thelma Hut — deploys to redmtnthelma.com. Static, no build: publish the repo root.
+[build]
+  publish = "."

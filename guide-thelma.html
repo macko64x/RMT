@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thelma Hut — Guest Guide</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#294a6b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Guest-guide-only helpers (kept off the shared sheet on purpose) */
+    .guide-wrap{max-width:760px;margin:0 auto;padding:0 20px}
+    .guide-head{background:linear-gradient(150deg,#3d6491,#294a6b 60%,#15212f);color:#fff;padding:78px 0 30px;text-align:center}
+    .guide-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,6vw,2.8rem);margin:.1em 0 .2em}
+    .guide-head p{color:#e4ecf4;margin:0 auto;max-width:44ch}
+    .sos{position:sticky;top:0;z-index:20;background:#7a1f1f;color:#fff;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center;padding:10px 16px;font-size:.95rem;text-align:center}
+    .sos a{color:#fff;font-weight:700;text-decoration:underline;white-space:nowrap}
+    .qnav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+    .qnav a{font-size:.82rem;text-decoration:none;color:var(--alpine-2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--paper)}
+    .qnav a:hover{border-color:var(--alpine-2)}
+    .gsec{padding:26px 0;border-bottom:1px solid var(--line)}
+    .gsec h2{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin:0 0 .1em;scroll-margin-top:64px}
+    .gsec .eyebrow{margin-bottom:.5em;color:var(--alpine-2)}
+    .gsec p,.gsec li{color:var(--ink-2);font-size:.98rem;line-height:1.55}
+    .gsec ul{margin:.5em 0 0;padding-left:1.2em}
+    .gsec li{margin:.3em 0}
+    .fill{background:#fff3cd;border:1px dashed #c98a2b;border-radius:5px;padding:1px 7px;color:#7a4f12;font-size:.92em;font-weight:500}
+    .safe{background:#eaf0f6;border-left:4px solid var(--alpine-2);border-radius:8px;padding:12px 15px;margin:.9em 0;font-size:.93rem;color:#243a52}
+    .alert{background:#fbeceb;border-left:4px solid #b4433a;border-radius:8px;padding:12px 15px;margin:.9em 0;font-size:.93rem;color:#5f211c}
+    .checklist{list-style:none;padding-left:0}
+    .checklist li{padding-left:1.7em;position:relative}
+    .checklist li::before{content:"☐";position:absolute;left:0;color:var(--alpine-2);font-size:1.1em}
+    .gfoot{text-align:center;padding:28px 0 60px;color:var(--muted);font-size:.85rem}
+    .gfoot a{color:var(--alpine-2)}
+  </style>
+</head>
+<body>
+  <div class="sos" role="note">
+    <span>🚨 Emergency: call <a href="tel:911">911</a></span>
+    <span>Hut contact: <span class="fill">add host phone</span></span>
+    <span><a href="#emergency">More info ↓</a></span>
+  </div>
+
+  <header class="guide-head" id="top">
+    <div class="guide-wrap">
+      <p class="eyebrow eyebrow--light">Red Mountain Pass · 11,200 ft · San Juans, CO</p>
+      <h1>Thelma Hut</h1>
+      <p>Welcome to the high country. Everything you need for a safe, comfortable stay is here — it works on your phone.</p>
+    </div>
+  </header>
+
+  <main class="guide-wrap">
+    <nav class="qnav" aria-label="Jump to a section">
+      <a href="#altitude">Altitude</a>
+      <a href="#arrival">Getting in</a>
+      <a href="#wifi">Wifi</a>
+      <a href="#heat">Heat &amp; stove</a>
+      <a href="#water">Water</a>
+      <a href="#power">Power</a>
+      <a href="#kitchen">Kitchen</a>
+      <a href="#bath">Toilet</a>
+      <a href="#sauna">Sauna</a>
+      <a href="#outside">Outside</a>
+      <a href="#checkout">Check-out</a>
+      <a href="#emergency">Emergency</a>
+    </nav>
+
+    <section class="gsec" id="altitude">
+      <p class="eyebrow">Read this first</p>
+      <h2>You're at 11,200 feet</h2>
+      <p>Altitude is the one thing that catches people out up here. Take it seriously and you'll feel great.</p>
+      <ul>
+        <li>Drink far more water than feels necessary, go easy on alcohol the first night, and don't be surprised if you sleep poorly or get a headache day one.</li>
+        <li>Know the signs of altitude sickness — worsening headache, nausea, dizziness, shortness of breath at rest. The only sure fix is to <strong>go down</strong>. If symptoms are severe or include confusion or trouble breathing, descend immediately and call 911.</li>
+        <li>Ascending gradually helps — a night in Ouray, Silverton or Durango before you come up makes a real difference.</li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="arrival">
+      <p class="eyebrow">Start here</p>
+      <h2>Getting in &amp; settled</h2>
+      <ul>
+        <li><strong>Access:</strong> in summer it's a short ~0.5-mile 4×4 approach; in winter it's a mandatory skin-in by ski, splitboard or snowshoe from the US-550 trailhead. <span class="fill">add parking spot + exact route to the hut</span></li>
+        <li><strong>Getting inside:</strong> <span class="fill">add lock/keypad location + entry code (or "your booking confirmation has the code")</span></li>
+        <li><strong>First things:</strong> get the wood stove going (below), leave boots in the mudroom, and use the hut booties provided.</li>
+        <li><strong>Sleeping:</strong> a king, a queen loft, and a bunk room with four XL twins — sleeps up to 8. <span class="fill">add any room notes</span></li>
+      </ul>
+      <div class="safe">You're deep in the San Juans and genuinely off-grid. Cell service is patchy to none, but there's Starlink wifi (below). Read the water, heat and (winter) avalanche notes before you settle in.</div>
+    </section>
+
+    <section class="gsec" id="wifi">
+      <p class="eyebrow">Stay connected</p>
+      <h2>Starlink wifi</h2>
+      <ul>
+        <li><strong>Network:</strong> <span class="fill">add network name</span> &nbsp;·&nbsp; <strong>Password:</strong> <span class="fill">add password</span></li>
+        <li>Satellite internet — good for calls and check-ins, but it can pause in heavy snow. Give it a minute to reconnect if it drops.</li>
+        <li>Still down? <span class="fill">add how to restart the Starlink, or who to text</span></li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="heat">
+      <p class="eyebrow">Warmth</p>
+      <h2>Heat &amp; the wood stove</h2>
+      <p>The wood stove keeps the hut cozy — light it early and keep it fed, especially at night.</p>
+      <ul>
+        <li><strong>Firewood:</strong> <span class="fill">add where wood, kindling &amp; fire-starter are kept, and any "refill what you burn" expectation</span></li>
+        <li><strong>Lighting it:</strong> <span class="fill">add the exact steps for this stove — air/damper settings, how to load and get a clean burn</span></li>
+      </ul>
+      <div class="safe"><strong>Fire &amp; CO safety:</strong> keep the area around the stove clear, don't leave it burning with the door open, and make sure the carbon-monoxide detector is working — if it alarms, get everyone outside and call 911. Let ashes cool completely before disposing of them in the metal ash can.</div>
+    </section>
+
+    <section class="gsec" id="water">
+      <p class="eyebrow">Off-grid living</p>
+      <h2>Water — use it sparingly</h2>
+      <ul>
+        <li>Water is <strong>limited</strong> up here, so <strong>there are no showers</strong>. Plan accordingly — it's part of hut life.</li>
+        <li><strong>Where it comes from:</strong> <span class="fill">add source + whether it's potable or needs filtering/melting, and how to get more</span></li>
+        <li>Use water only for drinking, cooking and quick clean-ups. Every drop is hauled or melted.</li>
+        <li><strong>Winter:</strong> <span class="fill">add any freeze precautions for the plumbing</span></li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="power">
+      <p class="eyebrow">Off-grid living</p>
+      <h2>Power</h2>
+      <p>Thelma runs on solar with battery storage.</p>
+      <ul>
+        <li>Lights and charging are fine off the batteries — turn lights off when you leave a room.</li>
+        <li><strong>Go easy on big draws:</strong> <span class="fill">add anything to avoid (high-wattage devices) and any inverter limits</span></li>
+        <li><strong>If power runs low</strong> (long storm, short days): <span class="fill">add what to check + who to text; note any backup</span></li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="kitchen">
+      <p class="eyebrow">The kitchen</p>
+      <h2>Cooking &amp; kitchen</h2>
+      <ul>
+        <li><strong>Appliances:</strong> <span class="fill">add stove fuel (propane?), fridge/cooler setup, coffee, and any quirks</span></li>
+        <li>Cookware, dishes and basics are stocked. <span class="fill">add what's provided vs. pack-in (food, oils, coffee, paper goods)</span></li>
+        <li><strong>Washing up:</strong> use minimal water — scrape, then wipe, then a quick rinse. <span class="fill">add greywater notes</span></li>
+        <li>On a guided trip? Your guides handle the food and the flow — follow their lead.</li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="bath">
+      <p class="eyebrow">Bathroom</p>
+      <h2>The toilet</h2>
+      <ul>
+        <li>There's an indoor <span class="fill">flush / composting — confirm which</span> toilet — a real luxury at 11,200 feet. <span class="fill">add exactly how to use it (what can/can't go in, any pedal/valve, TP handling)</span></li>
+        <li>Again: <strong>no showers</strong> — water is too limited. Bring wipes if you like.</li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="sauna">
+      <p class="eyebrow">The best part of the day</p>
+      <h2>Wood-fired sauna</h2>
+      <ul>
+        <li>End an alpine day with a soak. <span class="fill">add how to fire the sauna safely, how long it takes to heat, and where the wood is</span></li>
+        <li><strong>Sauna etiquette &amp; safety:</strong> keep water off the stove/rocks unless it's designed for it, don't overdo it at altitude, hydrate, and never leave the fire unattended. <span class="fill">confirm any hut-specific rules</span></li>
+      </ul>
+    </section>
+
+    <section class="gsec" id="outside">
+      <p class="eyebrow">Out the door</p>
+      <h2>Skiing, climbing &amp; exploring</h2>
+      <p>Terrain, towns, trailheads and season-by-season ideas are in our full area guide:</p>
+      <ul>
+        <li><a href="thelma-area-guide.html"><strong>Red Mountain Pass &amp; San Juans area guide →</strong></a></li>
+        <li><strong>Right out the door:</strong> <span class="fill">add the closest tours / objectives and any "don't miss / don't go there" notes</span></li>
+      </ul>
+      <div class="alert"><strong>Winter: this is serious avalanche terrain.</strong> Check the <strong>Colorado Avalanche Information Center</strong> (avalanche.state.co.us) every day, carry beacon-shovel-probe and know how to use them, and go with a guide unless your whole team is trained and equipped. When in doubt, don't.</div>
+    </section>
+
+    <section class="gsec" id="checkout">
+      <p class="eyebrow">Before you go</p>
+      <h2>Check-out</h2>
+      <p><strong>Check-out time:</strong> <span class="fill">add time</span>. Leave the hut as you found it for the next crew:</p>
+      <ul class="checklist">
+        <li>Wash, dry and put away dishes; wipe surfaces</li>
+        <li>Pack out all trash &amp; recycling — <span class="fill">confirm "pack it all out"</span></li>
+        <li>Refill the wood you burned <span class="fill">/ as instructed</span>; stove fully out and cold</li>
+        <li>Sauna fire out and cold</li>
+        <li>Beds/linens <span class="fill">left as instructed</span>; booties back in the mudroom</li>
+        <li>Water/plumbing <span class="fill">set for the season as instructed</span></li>
+        <li>Windows shut, doors locked; power/lights <span class="fill">set as instructed</span></li>
+        <li>Return the code/key <span class="fill">as instructed</span></li>
+      </ul>
+      <p>Anything break, run low, or not work right? Tell us — honest wear is no problem and it helps the next guests.</p>
+    </section>
+
+    <section class="gsec" id="emergency">
+      <p class="eyebrow">Keep this handy</p>
+      <h2>Emergency &amp; contacts</h2>
+      <ul>
+        <li><strong>Life-threatening emergency:</strong> call <a href="tel:911">911</a>. Location for responders: <span class="fill">add exact location / coordinates + access notes</span>. Note cell service is limited — know your plan before you head out.</li>
+        <li><strong>Hut / host contact:</strong> <span class="fill">add name + phone (make it a tap-to-call link)</span></li>
+        <li><strong>Guiding partner (if on a guided trip):</strong> <span class="fill">add name + number</span></li>
+        <li><strong>Nearest hospitals:</strong> Montrose Regional Health (~1 hr N) and Mercy Hospital, Durango (~1 hr S). Silverton has a small clinic (seasonal hours).</li>
+        <li><strong>Winter avalanche:</strong> Colorado Avalanche Information Center — avalanche.state.co.us — check daily.</li>
+        <li><strong>Roads (US-550 / Million Dollar Highway):</strong> CDOT / COtrip.org — the pass can close for avalanche control.</li>
+        <li><strong>Non-emergency hut issue:</strong> text the hut contact above and we'll help.</li>
+      </ul>
+    </section>
+
+    <p class="gfoot">Thelma Hut · operated by Stok Investment Group · <a href="/">hut page</a> · <a href="#top">back to top</a><br />Tread light, ski safe, and enjoy the high country. ⛰️</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

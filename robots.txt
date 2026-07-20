@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://redmtnthelma.com/sitemap.xml
