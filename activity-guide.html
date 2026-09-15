@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thelma Hut — Activity Guide</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2ece1; --accent:#294a6b; --accent-2:#3d6491;
+  --ink:#2c3a30; --rule:#9db0a2; --tbd:#8a6d3b;
+  --serif:"Fraunces",ui-serif,Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);font-weight:300;color:var(--accent);background:var(--paper);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:300;letter-spacing:-.015em;line-height:1.05}
+.tbd{color:var(--tbd);border-bottom:1px dashed var(--tbd);font-style:italic}
+
+/* ============================ SHARED TYPE ============================ */
+.entry .rule{height:2px;background:var(--accent)}
+.entry h2{color:var(--accent)}
+.entry .meta{font-family:var(--serif);color:var(--accent-2)}
+.entry .desc{color:var(--ink)}
+.spec{display:grid;border-top:1px solid var(--rule)}
+.spec:last-child{border-bottom:1px solid var(--rule)}
+.spec dt{font-family:var(--serif);color:var(--accent)}
+.spec dd{color:var(--ink)}
+.spec dd .sub{display:block;color:var(--accent-2);margin-top:3px}
+.frame{border:1px solid var(--rule);background:rgba(255,255,255,.35);
+  display:flex;align-items:center;justify-content:center;text-align:center}
+.frame span{font-family:var(--serif);font-style:italic;color:var(--tbd);max-width:24ch;line-height:1.5}
+.divider{background:var(--accent);color:#f4f1e6}
+.divider h2{color:#f4f1e6}
+.divider .divider__sub{color:#cfdcd2}
+.cover{background:#12160f;position:relative;overflow:hidden}
+.cover h1{color:#f4f1e6}
+.cover__foot{font-family:var(--serif);color:#eae7da}
+
+/* ============================== SCREEN =============================== */
+@media screen{
+  .paper{max-width:1180px;margin:0 auto;padding:0 24px}
+  .spread{padding:56px 0;border-bottom:1px solid var(--rule)}
+  .spread--cover,.spread--divider{border-bottom:0}
+  .folio,.mark,.foot{display:none}
+
+  .cover{position:relative;min-height:min(80vh,760px);padding:40px 28px 132px;margin-bottom:0}
+  .cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82}
+  .cover::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,14,9,.72),rgba(10,14,9,.2) 45%,rgba(10,14,9,.8))}
+  .cover>*{position:relative;z-index:2}
+  .cover h1{font-size:clamp(2.6rem,11vw,7rem);line-height:.95}
+  .cover__foot{position:absolute;left:28px;right:96px;bottom:40px;
+    font-size:clamp(1rem,2.4vw,1.5rem);line-height:1.4}
+  .cover__mark{position:absolute;right:28px;bottom:40px;width:44px;height:44px;z-index:2}
+
+  .toc{padding:48px 0;border-bottom:1px solid var(--rule)}
+  .toc h2{font-size:1.5rem;margin-bottom:18px}
+  .toc ol{list-style:none;columns:2;column-gap:48px}
+  .toc li{border-bottom:1px solid var(--rule);padding:9px 0;font-size:.98rem}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+
+  .spread--divider{background:var(--accent);padding:64px 0;margin:0 -24px;
+    padding-left:24px;padding-right:24px}
+  .divider h2{font-size:clamp(2.2rem,7vw,3.6rem);margin-bottom:14px}
+  .divider__sub{font-size:1.05rem;max-width:54ch}
+  .divider img{margin-top:32px;width:100%;max-height:420px;object-fit:cover}
+
+  .lede{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.4rem);line-height:1.22;
+    color:var(--accent);margin-bottom:28px}
+  .body p+p{margin-top:14px}
+  .welcome{display:grid;grid-template-columns:1fr;gap:40px}
+  .facts h3,.cells h3{font-size:1.4rem;border-bottom:2px solid var(--accent);
+    padding-bottom:12px;margin-bottom:8px}
+
+  .pair{display:grid;gap:52px}
+  .entry{max-width:66ch}
+  .entry .rule{margin-bottom:20px}
+  .entry h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+  .entry .meta{font-size:1.05rem;line-height:1.35;margin-top:10px}
+  .entry .desc{margin-top:18px;font-size:1.02rem}
+  .specs{margin-top:22px}
+  .spec{grid-template-columns:minmax(120px,190px) 1fr;gap:18px;padding:12px 0 13px}
+  .spec dt{font-size:1.02rem}
+  .spec dd{font-size:.96rem;line-height:1.5}
+  .spec dd .sub{font-size:.88rem}
+  figure img{width:100%;max-height:460px;object-fit:cover;margin-bottom:12px}
+  .frame{min-height:200px;padding:28px;margin-bottom:12px}
+  .frame span{font-size:1rem}
+
+  .cells{display:grid;grid-template-columns:1fr;gap:34px;margin-top:28px}
+  .cells .cell h4{font-size:1.35rem;border-top:2px solid var(--accent);padding-top:14px;margin-bottom:8px}
+  .cells .cell p{font-size:.98rem}
+  .pagetitle{font-size:clamp(1.9rem,5.5vw,3rem)}
+  .pagetitle small{display:block;font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:10px;font-weight:400}
+  .cols{list-style:none;margin-top:8px}
+  .cols li{border-bottom:1px solid var(--rule);padding:9px 0;font-size:1rem;color:var(--ink)}
+  .closing{background:rgba(31,77,58,.055);border:1px solid var(--rule);padding:32px;margin-top:32px}
+  .closing h3{font-size:1.7rem;margin-bottom:14px}
+  .closing p+p{margin-top:12px}
+  .closing .em{font-family:var(--serif);font-size:1.15rem;color:var(--accent)}
+  .strip{width:100%;max-height:280px;object-fit:cover;margin-top:32px}
+  @media (min-width:860px){
+    .welcome{grid-template-columns:1fr 1fr;gap:64px}
+    .cells{grid-template-columns:repeat(3,1fr);gap:44px 52px}
+    .pair{grid-template-columns:1fr 1fr;gap:64px}
+    .pair--stack{grid-template-columns:1fr}
+    .divider{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .divider img{margin-top:0}
+    .appendix{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .closing{margin-top:0}
+  }
+}
+
+/* =============================== PRINT =============================== */
+@page{size:1920px 1080px;margin:0}
+@media print{
+  html{background:#fff}
+  body{background:var(--paper)}
+  .paper{max-width:none;margin:0;padding:0}
+  .toc-screen{display:none}
+  .spread{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper);
+    padding:0;border:0;margin:0;page-break-after:always;break-after:page;display:block}
+  .spread:last-child{page-break-after:auto;break-after:auto}
+
+  /* every positioned element carries --x/--y/--w/--h */
+  .spread [data-pos]{position:absolute;left:var(--x);top:var(--y);
+    width:var(--w);height:var(--h,auto);margin:0;max-width:none;max-height:none}
+  .spread [data-pos] img{width:100%;height:100%;object-fit:cover;margin:0;max-height:none}
+
+  .mark{display:block;position:absolute;top:44px;left:64px;width:46px;height:46px}
+  .folio{display:block;position:absolute;top:44px;right:30px;font-family:var(--serif);
+    font-size:22px;color:var(--accent-2);letter-spacing:.04em}
+  .foot{display:block;position:absolute;bottom:46px;right:64px;text-align:right;font-size:13px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);opacity:.75;font-weight:400}
+  .divider .folio,.divider .foot{color:#cfdcd2}
+
+  .entry .rule{margin-bottom:26px}
+  .entry h2{font-size:58px;line-height:1.02}
+  .entry h2.h-sm{font-size:48px}
+  .entry .meta{font-size:22px;line-height:1.3;margin-top:12px}
+  .entry .desc{font-size:17.5px;line-height:1.62;margin-top:30px}
+  .specs{margin-top:34px}
+  .spec{grid-template-columns:230px 1fr;gap:26px;padding:15px 0 17px}
+  .spec dt{font-size:20px}
+  .spec dd{font-size:16.5px;line-height:1.5}
+  .spec dd .sub{font-size:14.5px}
+  .notch-tl{clip-path:polygon(64px 0,100% 0,100% 100%,0 100%,0 64px)}
+  .notch-br{clip-path:polygon(0 0,100% 0,100% calc(100% - 64px),calc(100% - 64px) 100%,0 100%)}
+  .frame{min-height:0;padding:0;margin:0}
+  .frame span{font-size:19px}
+
+  .cover{width:1920px;height:1080px;padding:0;display:block}
+  .cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82}
+  .cover::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,14,9,.55),rgba(10,14,9,.12) 42%,rgba(10,14,9,.72))}
+  .cover h1{position:absolute;left:64px;top:52px;z-index:2;font-size:210px;line-height:.92;
+    letter-spacing:-.035em}
+  .cover__foot{position:absolute;left:64px;bottom:60px;z-index:2;font-size:27px;line-height:1.42}
+  .cover__mark{position:absolute;right:64px;bottom:56px;z-index:2;width:52px;height:52px;display:block}
+
+  .spread--divider{margin:0;padding:0;background:var(--accent)}
+  .divider{display:block}
+  .divider h2{position:absolute;left:1010px;top:400px;font-size:80px;line-height:1.06;margin:0}
+  .divider__sub{position:absolute;left:1010px;top:600px;width:640px;font-size:19px;line-height:1.65}
+  .divider img{position:absolute;left:64px;top:300px;width:790px;height:640px;object-fit:cover;
+    margin:0;max-height:none}
+  .hair{display:block;position:absolute;background:rgba(244,241,230,.5);height:1px}
+  .chev{display:block;position:absolute;left:1010px;top:60px;width:846px;height:300px}
+
+  .lede{position:absolute;left:64px;top:220px;width:820px;font-size:42px;line-height:1.22;margin:0}
+  .body{position:absolute;left:64px;top:520px;width:760px;font-size:17.5px;line-height:1.65;color:var(--ink)}
+  .body p+p{margin-top:16px}
+  .welcome{display:block}
+  .facts{position:absolute;right:64px;top:220px;width:820px}
+  .facts h3,.cells h3{font-size:26px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid var(--accent)}
+
+  .pagetitle{position:absolute;left:64px;top:130px;font-size:64px;margin:0}
+  .pagetitle small{font-size:19px;margin-bottom:14px}
+  .cells{position:absolute;left:64px;right:64px;top:310px;display:grid;
+    grid-template-columns:repeat(3,1fr);gap:52px 60px;margin:0}
+  .cells .cell h4{font-size:29px;border-top:2px solid var(--accent);padding-top:16px;margin-bottom:12px}
+  .cells .cell p{font-size:16.5px;line-height:1.6}
+  .strip{position:absolute;left:64px;top:762px;width:1792px;height:254px;object-fit:cover;margin:0;max-height:none}
+
+  .appendix{display:block}
+  .cols{position:absolute;left:64px;top:300px;width:900px;column-count:2;column-gap:64px;margin:0}
+  .cols li{font-size:18px;line-height:2.05;border-bottom:1px solid var(--rule);break-inside:avoid;padding:0}
+  .closing{position:absolute;right:64px;top:300px;width:800px;padding:52px 54px;margin:0}
+  .closing h3{font-size:38px;margin-bottom:20px}
+  .closing p{font-size:17.5px;line-height:1.68}
+  .closing .em{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="paper">
+<section class="spread spread--cover" id="p1"><div class="cover"><img src="images/thelma.jpg" alt=""><h1>Thelma</h1><div class="cover__foot">Red Mountain Pass, Colorado &middot; 11,200 ft<br>Activity Guide</div><svg class="cover__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#f4f1e6" stroke-width="1.6"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#f4f1e6" stroke-width="1.6"/></svg></div></section>
+<nav class="toc toc-screen"><h2>Contents</h2><ol><li><a href="#p2">Welcome</a></li><li><a href="#p3">Winter &amp; Spring</a></li><li><a href="#p4">Backcountry skiing</a></li><li><a href="#p5">Touring &amp; Silverton Mountain</a></li><li><a href="#p6">Ouray Ice Park</a></li><li><a href="#p7">Guided trips &amp; nordic</a></li><li><a href="#p8">The ski-in arrival</a></li><li><a href="#p9">Snow safety</a></li><li><a href="#p10">Summer &amp; Fall</a></li><li><a href="#p11">Hiking &amp; wildflowers</a></li><li><a href="#p12">Jeep passes &amp; peaks</a></li><li><a href="#p13">Biking &amp; fishing</a></li><li><a href="#p14">Ouray hot springs</a></li><li><a href="#p15">Silverton &amp; Ouray</a></li><li><a href="#p16">At the hut</a></li><li><a href="#p17">Good to know</a></li><li><a href="#p18">Also worth your time</a></li></ol></nav><section class="spread" id="p2"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">02</div><div class="welcome"><div><p class="lede">You&rsquo;re high on Red Mountain Pass, off the Million Dollar Highway &mdash; surrounded by some of the wildest terrain in the Lower 48.</p><div class="body"><p>This guide is how we&rsquo;d spend the days, season by season. Tell us your group, your dates and your experience, and we&rsquo;ll shape it into a trip and line up the guides.</p><p>Winter access to the hut is an over-snow trip from the pass, through avalanche terrain. We send exact directions, parking and current conditions before you arrive &mdash; and we will happily connect you with a guide.</p><p><span class="tbd">Dashed items</span> are placeholders for you to confirm &mdash; rates, seasons and operator details change year to year.</p></div></div><div class="facts"><h3>At a glance</h3><dl class="specs"><div class="spec"><dt>Silverton</dt><dd>~15 min south<span class="sub">Gateway town, 9,300 ft</span></dd></div><div class="spec"><dt>Ouray</dt><dd>~25 min north<span class="sub">Hot springs &amp; the Ice Park</span></dd></div><div class="spec"><dt>Telluride</dt><dd>~1.5 hr<span class="sub">Resort &amp; town</span></dd></div><div class="spec"><dt>Montrose (MTJ)</dt><dd>~1 hr north<span class="sub">Closest commercial airport</span></dd></div><div class="spec"><dt>Durango (DRO)</dt><dd>~1 hr 15 min south<span class="sub">Second airport option</span></dd></div><div class="spec"><dt>Elevation</dt><dd>11,200 ft<span class="sub">Acclimatize &mdash; see Good to know</span></dd></div></dl></div></div><div class="foot">Thelma Hut · Activity Guide</div></section>
+<section class="spread spread--divider" id="p3"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#f4f1e6" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#f4f1e6" stroke-width="1.8"/></svg><div class="folio">03</div><div class="divider"><div class="hair" style="left:64px;top:270px;width:790px"></div><div class="hair" style="left:64px;top:970px;width:790px"></div><div class="hair" style="left:1010px;top:20px;width:846px"></div><div class="hair" style="left:1010px;top:362px;width:846px"></div><svg class="chev" viewBox="0 0 846 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300 L423 20 L846 300" fill="none" stroke="rgba(244,241,230,.5)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg><img src="images/rmp-5.jpg" alt=""><h2>Winter<br>&amp; Spring</h2><p class="divider__sub">The main event. Red Mountain Pass is legendary backcountry terrain &mdash; and it is avalanche country. Go with a guide unless your team is trained and equipped.</p></div></section>
+<section class="spread" id="p4"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">04</div><div class="pair pair--stack"><article class="entry" data-pos style="--x:1196px;--y:32px;--w:612px"><div class="rule"></div><h2>Backcountry skiing &amp; riding</h2><p class="meta">Red Mountain Pass<br>From the hut door</p><p class="desc">Some of the most storied ski touring in Colorado is right off the pass &mdash; big lines, deep snow, and consequences to match. This is guided-or-expert terrain, and the reason the hut exists. Skin from the door into alpine bowls and couloirs; a guide will put you on the right aspect for the day&rsquo;s conditions.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd><span class="tbd">typical touring window from the hut — confirm</span></dd></div><div class="spec"><dt>Level</dt><dd>Experienced, or with a guide<span class="sub">Beacon, shovel, probe &mdash; and the training</span></dd></div><div class="spec"><dt>Forecast</dt><dd>CAIC, San Juan zone &mdash; daily</dd></div><div class="spec"><dt>Guide service</dt><dd><span class="tbd">preferred guide service and contact — confirm</span></dd></div><div class="spec"><dt>Guided day rate</dt><dd><span class="tbd">per-person guided day rate — confirm</span></dd></div></dl></article><figure class="notch-br" data-pos style="--x:64px;--y:640px;--w:1060px;--h:376px"><img src="images/rmp-6.jpg" alt=""></figure></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread" id="p5"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">05</div><div class="pair"><div class="pair__a"><figure class="frame notch-tl" data-pos style="--x:1024px;--y:32px;--w:312px;--h:470px"><span>Photo to source &mdash;<br>skinning off Red Mountain Pass</span></figure><article class="entry" data-pos style="--x:1356px;--y:32px;--w:452px"><div class="rule"></div><h2 class="h-sm">Splitboarding</h2><p class="meta">Alpine bowls &amp; couloirs<br>Skin from the pass</p><p class="desc">The same terrain, sideways. Splitboard-friendly lines off the pass, with the skin track set by whoever gets up first.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd><span class="tbd">splitboard season window — confirm</span></dd></div><div class="spec"><dt>Level</dt><dd>Experienced or guided</dd></div><div class="spec"><dt>Rentals</dt><dd><span class="tbd">nearest splitboard rental &amp;mdash; Silverton or Ouray? — confirm</span></dd></div></dl></article></div><div class="pair__b"><figure class="frame notch-tl" data-pos style="--x:64px;--y:520px;--w:420px;--h:500px"><span>Photo to source &mdash;<br>the single chair at Silverton</span></figure><article class="entry" data-pos style="--x:544px;--y:520px;--w:640px"><div class="rule"></div><h2>Silverton Mountain</h2><p class="meta">Silverton &middot; single chair, guided powder days<br>~20 minutes from the hut</p><p class="desc">A one-of-a-kind expert ski area &mdash; one chair, no groomers, no crowds. Guided and unguided seasons run differently, and the good days sell out. Book ahead.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd><span class="tbd">guided vs unguided season dates — confirm</span></dd></div><div class="spec"><dt>Level</dt><dd>Advanced to expert only</dd></div><div class="spec"><dt>Cost</dt><dd><span class="tbd">guided and unguided day rates — confirm</span></dd></div></dl></article></div></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread" id="p6"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">06</div><div class="pair pair--stack"><article class="entry" data-pos style="--x:1196px;--y:32px;--w:612px"><div class="rule"></div><h2>Ouray Ice Park</h2><p class="meta">Uncompahgre Gorge, Ouray<br>~25 minutes down the pass</p><p class="desc">World-famous human-made ice in the gorge below town &mdash; free to climb, and the centre of the ice universe each winter. Roadside single-pitch routes through to serious mixed lines, with guides and gear rental in town for anyone new to swinging tools.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>Roughly late December&ndash;March<span class="sub"><build.TBD object at 0x7fe22f603550></span></dd></div><div class="spec"><dt>Cost</dt><dd>Free to climb<span class="sub">Donations support the park</span></dd></div><div class="spec"><dt>Guides &amp; gear</dt><dd><span class="tbd">guide service and half/full-day rates — confirm</span></dd></div><div class="spec"><dt>Ice Festival</dt><dd><span class="tbd">Ouray Ice Festival dates this season — confirm</span></dd></div></dl></article><figure class="frame notch-br" data-pos style="--x:64px;--y:620px;--w:1060px;--h:396px"><span>Photo to source &mdash;<br>the Uncompahgre Gorge in winter</span></figure></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread" id="p7"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">07</div><div class="pair"><div class="pair__a"><figure class="notch-tl" data-pos style="--x:1024px;--y:32px;--w:312px;--h:470px"><img src="images/rmp-1.jpg" alt=""></figure><article class="entry" data-pos style="--x:1356px;--y:32px;--w:452px"><div class="rule"></div><h2 class="h-sm">Guided &amp; catered</h2><p class="meta">Established local guides<br>Arranged with your stay</p><p class="desc">We run Thelma lean with local guides &mdash; the simplest way to ski the San Juans safely, with the food and logistics handled.</p><dl class="specs"><div class="spec"><dt>What&rsquo;s included</dt><dd><span class="tbd">what a catered trip covers &amp;mdash; meals, guide, gear? — confirm</span></dd></div><div class="spec"><dt>Cost</dt><dd><span class="tbd">per-person catered trip rate — confirm</span></dd></div><div class="spec"><dt>Book by</dt><dd><span class="tbd">how far ahead guided trips need booking — confirm</span></dd></div></dl></article></div><div class="pair__b"><figure class="frame notch-tl" data-pos style="--x:64px;--y:520px;--w:420px;--h:500px"><span>Photo to source &mdash;<br>a mining road below the pass</span></figure><article class="entry" data-pos style="--x:544px;--y:520px;--w:640px"><div class="rule"></div><h2>Nordic &amp; snowshoe</h2><p class="meta">Valley floors &amp; old mining roads<br>Below the steeps</p><p class="desc">Mellower ways to move when the avalanche danger is up or the legs are tired &mdash; quiet valleys and mining roads that keep you well out of the steep stuff.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>December&ndash;April</dd></div><div class="spec"><dt>At the hut</dt><dd><span class="tbd">snowshoes kept at the hut, and what sizes? — confirm</span></dd></div><div class="spec"><dt>Good for</dt><dd>A danger-high day, or a rest day</dd></div></dl></article></div></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread" id="p8"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">08</div><div class="pair pair--stack"><article class="entry" data-pos style="--x:1196px;--y:32px;--w:612px"><div class="rule"></div><h2>The ski-in arrival</h2><p class="meta">Over snow from US-550<br>Part of what makes Thelma, Thelma</p><p class="desc">Reaching the hut in winter is an over-snow trip by ski or sled from the plowed highway, through avalanche terrain. It is a true backcountry arrival &mdash; and it is why the place feels the way it does. Full access details, parking and current conditions come with your booking.</p><dl class="specs"><div class="spec"><dt>Distance from the highway</dt><dd><span class="tbd">over-snow distance and typical travel time — confirm</span></dd></div><div class="spec"><dt>How gear gets in</dt><dd><span class="tbd">bag and food shuttle &amp;mdash; snowmobile? — confirm</span></dd></div><div class="spec"><dt>Parking</dt><dd><span class="tbd">winter parking spot on US-550 and capacity — confirm</span></dd></div><div class="spec"><dt>Avalanche terrain</dt><dd>Yes &mdash; on the approach itself<span class="sub">Check CAIC the morning you travel</span></dd></div></dl></article><figure class="notch-br" data-pos style="--x:64px;--y:640px;--w:1060px;--h:376px"><img src="images/rmp-5.jpg" alt=""></figure></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread" id="p9"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">09</div><div class="pair pair--stack"><article class="entry" data-pos style="--x:1196px;--y:32px;--w:612px"><div class="rule"></div><h2>Snow safety</h2><p class="meta">Colorado Avalanche Information Center<br>San Juan zone</p><p class="desc">The San Juans have a continental snowpack with a long memory &mdash; persistent weak layers that can stay dangerous for weeks after a storm. Read the forecast every single day of your stay, carry beacon, shovel and probe, know how to use them, and turn around when the snowpack says so. Nobody here will think less of you for it.</p><dl class="specs"><div class="spec"><dt>Forecast</dt><dd>avalanche.state.co.us<span class="sub">San Juan zone, daily</span></dd></div><div class="spec"><dt>Carry</dt><dd>Beacon, shovel, probe &mdash; each person</dd></div><div class="spec"><dt>Training</dt><dd>AIARE 1 at minimum for unguided travel</dd></div><div class="spec"><dt>Courses nearby</dt><dd><span class="tbd">local avalanche course provider and dates — confirm</span></dd></div><div class="spec"><dt>Roads</dt><dd>CDOT / COtrip<span class="sub">US-550 closes for avalanche control</span></dd></div></dl></article><figure class="frame notch-br" data-pos style="--x:64px;--y:640px;--w:1060px;--h:376px"><span>Photo to source &mdash;<br>a snowpit, or the CAIC rose</span></figure></div><div class="foot">Winter &amp; Spring</div></section>
+<section class="spread spread--divider" id="p10"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#f4f1e6" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#f4f1e6" stroke-width="1.8"/></svg><div class="folio">10</div><div class="divider"><div class="hair" style="left:64px;top:270px;width:790px"></div><div class="hair" style="left:64px;top:970px;width:790px"></div><div class="hair" style="left:1010px;top:20px;width:846px"></div><div class="hair" style="left:1010px;top:362px;width:846px"></div><svg class="chev" viewBox="0 0 846 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300 L423 20 L846 300" fill="none" stroke="rgba(244,241,230,.5)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg><img src="images/rmp-2.jpg" alt=""><h2>Summer<br>&amp; Fall</h2><p class="divider__sub">June&ndash;October. Turquoise tarns, wildflower basins and passes that top 13,000 feet &mdash; the best alpine playground in Colorado.</p></div></section>
+<section class="spread" id="p11"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">11</div><div class="pair"><div class="pair__a"><figure class="frame notch-tl" data-pos style="--x:1024px;--y:32px;--w:312px;--h:470px"><span>Photo to source &mdash;<br>Ice Lakes Basin</span></figure><article class="entry" data-pos style="--x:1356px;--y:32px;--w:452px"><div class="rule"></div><h2 class="h-sm">Alpine hiking</h2><p class="meta">Ice Lakes Basin &middot; Island, Clear, Columbine<br>Trailheads near Silverton</p><p class="desc">Ice Lakes Basin is the postcard &mdash; impossibly blue tarns under 13,000-foot peaks. A lifetime of days within half an hour of the hut.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>July&ndash;September<span class="sub">Snow lingers in the basins</span></dd></div><div class="spec"><dt>Permits</dt><dd><span class="tbd">Ice Lakes parking / permit system this season — confirm</span></dd></div><div class="spec"><dt>Start</dt><dd>Early &mdash; storms build by noon</dd></div></dl></article></div><div class="pair__b"><figure class="notch-tl" data-pos style="--x:64px;--y:520px;--w:420px;--h:500px"><img src="images/rmp-2.jpg" alt=""></figure><article class="entry" data-pos style="--x:544px;--y:520px;--w:640px"><div class="rule"></div><h2>Wildflowers</h2><p class="meta">The high basins<br>Mid-July to early August</p><p class="desc">The basins explode &mdash; columbine, paintbrush and lupine, as good as wildflower hiking gets anywhere. It is a short window and worth planning a trip around.</p><dl class="specs"><div class="spec"><dt>Peak</dt><dd>Mid-July&ndash;early August<span class="sub">Varies with the snow year</span></dd></div><div class="spec"><dt>Where</dt><dd>Any high basin off the pass</dd></div><div class="spec"><dt>Cost</dt><dd>Free</dd></div></dl></article></div></div><div class="foot">Summer &amp; Fall</div></section>
+<section class="spread" id="p12"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">12</div><div class="pair"><div class="pair__a"><figure class="frame notch-tl" data-pos style="--x:1024px;--y:32px;--w:312px;--h:470px"><span>Photo to source &mdash;<br>a shelf road over the pass</span></figure><article class="entry" data-pos style="--x:1356px;--y:32px;--w:452px"><div class="rule"></div><h2 class="h-sm">Jeep passes</h2><p class="meta">Black Bear &middot; Imogene &middot; Ophir &middot; Engineer<br>The Alpine Loop</p><p class="desc">Legendary 4&times;4 roads over 12,000-foot saddles. Rent a rig in town or ride with an outfitter who knows which shelf road you actually want.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>Roughly July&ndash;September<span class="sub">Snow closes them early and late</span></dd></div><div class="spec"><dt>Rental</dt><dd><span class="tbd">Jeep rental outfit and day rate — confirm</span></dd></div><div class="spec"><dt>Guided tour</dt><dd><span class="tbd">guided Jeep tour operator and rate — confirm</span></dd></div></dl></article></div><div class="pair__b"><figure class="frame notch-tl" data-pos style="--x:64px;--y:520px;--w:420px;--h:500px"><span>Photo to source &mdash;<br>a San Juan summit ridge</span></figure><article class="entry" data-pos style="--x:544px;--y:520px;--w:640px"><div class="rule"></div><h2>Peak bagging</h2><p class="meta">Handies Peak &middot; Mount Sneffels &middot; the Wilsons<br>Within an hour</p><p class="desc">Handies is one of Colorado&rsquo;s most accessible 14ers; Sneffels and the Wilson group beckon the ambitious. Be off summits before the afternoon storms.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>July&ndash;September</dd></div><div class="spec"><dt>Start time</dt><dd>Pre-dawn<span class="sub">Below treeline by noon</span></dd></div><div class="spec"><dt>Difficulty</dt><dd>Class 1 to Class 4<span class="sub">Depending on the peak</span></dd></div></dl></article></div></div><div class="foot">Summer &amp; Fall</div></section>
+<section class="spread" id="p13"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">13</div><div class="pair"><div class="pair__a"><figure class="frame notch-tl" data-pos style="--x:1024px;--y:32px;--w:312px;--h:470px"><span>Photo to source &mdash;<br>high-alpine singletrack</span></figure><article class="entry" data-pos style="--x:1356px;--y:32px;--w:452px"><div class="rule"></div><h2 class="h-sm">Mountain biking</h2><p class="meta">Durango&ndash;Telluride network<br>Valley spins to lung-busting passes</p><p class="desc">Big high-alpine rides, plus the wider Durango and Telluride trail networks when you want something more built.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>June&ndash;October</dd></div><div class="spec"><dt>Rentals</dt><dd><span class="tbd">nearest bike rental &amp;mdash; Silverton, Ouray or Durango? — confirm</span></dd></div><div class="spec"><dt>Altitude</dt><dd>Respect it<span class="sub">Everything here starts high</span></dd></div></dl></article></div><div class="pair__b"><figure class="frame notch-tl" data-pos style="--x:64px;--y:520px;--w:420px;--h:500px"><span>Photo to source &mdash;<br>the Animas</span></figure><article class="entry" data-pos style="--x:544px;--y:520px;--w:640px"><div class="rule"></div><h2>Fishing</h2><p class="meta">Animas &amp; Uncompahgre drainages<br>Plus dozens of alpine lakes</p><p class="desc">Two drainages and more alpine lakes than you could fish in a season. We can line up a local guide who knows where they&rsquo;re rising this week.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>June&ndash;October</dd></div><div class="spec"><dt>Licence</dt><dd>Colorado licence required</dd></div><div class="spec"><dt>Guided day</dt><dd><span class="tbd">local fishing guide and day rate — confirm</span></dd></div></dl></article></div></div><div class="foot">Summer &amp; Fall</div></section>
+<section class="spread" id="p14"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">14</div><div class="pair pair--stack"><article class="entry" data-pos style="--x:1196px;--y:32px;--w:612px"><div class="rule"></div><h2>Hot springs &amp; via ferrata</h2><p class="meta">Ouray &mdash; the Switzerland of America<br>~25 minutes down the pass</p><p class="desc">Soak at the Ouray Hot Springs Pool, then test your nerve on the town&rsquo;s via ferrata across the gorge. An easy, worthwhile day trip down-valley &mdash; and the correct recovery day after something big.</p><dl class="specs"><div class="spec"><dt>Season</dt><dd>Hot springs year-round<span class="sub">Via ferrata is summer only</span></dd></div><div class="spec"><dt>Pool admission</dt><dd><span class="tbd">Ouray Hot Springs Pool admission — confirm</span></dd></div><div class="spec"><dt>Via ferrata</dt><dd>Free to climb with your own kit<span class="sub"><build.TBD object at 0x7fe22f60c7d0></span></dd></div><div class="spec"><dt>Worth pairing with</dt><dd>A meal in town before the drive back up</dd></div></dl></article><figure class="frame notch-br" data-pos style="--x:64px;--y:620px;--w:1060px;--h:396px"><span>Photo to source &mdash;<br>the gorge at Ouray</span></figure></div><div class="foot">Summer &amp; Fall</div></section>
+<section class="spread" id="p15"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">15</div><h2 class="pagetitle"><small>Down the pass &mdash; no services up top</small>Silverton &amp; Ouray</h2><div class="cells"><div class="cell"><h4>Silverton &middot; ~15 min south</h4><p>A high, funky old mining town at 9,300 feet and the southern gateway to the pass. Small grocery, gas, a brewery and a handful of restaurants along Blair and Greene streets.</p></div><div class="cell"><h4>Ouray &middot; ~25 min north</h4><p>Tucked in a box canyon at 7,800 feet. More restaurants and lodging, the Hot Springs Pool, the Ice Park, and outfitters for Jeep tours and gear.</p></div><div class="cell"><h4>Provisions &amp; fuel</h4><p>Provision and fuel before you head up &mdash; there are no services on the pass itself. Mountain-town hours are seasonal, so stock up when you can.</p></div><div class="cell"><h4>A full grocery run</h4><p>Montrose is about an hour north, Durango about the same south. Worth the detour on the way in if you&rsquo;re feeding a full hut.</p></div><div class="cell"><h4>The narrow gauge</h4><p>The Durango &amp; Silverton Narrow Gauge Railroad terminates in Silverton &mdash; a genuinely good day out, and a piece of living history.</p></div><div class="cell"><h4>Eating out</h4><p><span class="tbd">current favourites in Silverton and Ouray &amp;mdash; 2 or 3 each — confirm</span></p></div></div><img class="strip" src="images/thelma.jpg" alt=""><div class="foot">Silverton &amp; Ouray</div></section>
+<section class="spread" id="p16"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">16</div><h2 class="pagetitle"><small>Without leaving 11,200 feet</small>At the hut</h2><div class="cells"><div class="cell"><h4>Starlink &amp; solar</h4><p>Cell service is patchy to none up high, but the hut runs Starlink wifi and solar power. Download maps, forecasts and directions before you leave town anyway.</p></div><div class="cell"><h4>Take the whole hut</h4><p>Book it out for your group, or by the bunk when you&rsquo;d rather share. Either way you wake up in the middle of the best terrain in Colorado.</p></div><div class="cell"><h4>The kitchen</h4><p>Cook for the group, or go catered and let the guides handle food and logistics entirely. Provision in Silverton or Ouray on the way up.</p></div><div class="cell"><h4>Bunks &amp; bedding</h4><p><span class="tbd">sleeping capacity, bunk configuration, what bedding is provided — confirm</span></p></div><div class="cell"><h4>Drying &amp; gear</h4><p><span class="tbd">drying space, boot storage, ski racks &amp;mdash; describe what&#x27;s there — confirm</span></p></div><div class="cell"><h4>Water &amp; heat</h4><p><span class="tbd">water source and heating &amp;mdash; what guests should know — confirm</span></p></div></div><div class="foot">At the hut</div></section>
+<section class="spread" id="p17"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">17</div><h2 class="pagetitle"><small>Before you come</small>Good to know</h2><div class="cells"><div class="cell"><h4>Altitude is real</h4><p>The hut is at 11,200 feet. Coming from sea level, take day one easy, drink far more water than feels necessary, and know the signs of altitude sickness. A night lower in Ouray or Durango helps you acclimatize.</p></div><div class="cell"><h4>The Million Dollar Highway</h4><p>US-550 over the pass is stunning and serious &mdash; tight switchbacks, big drop-offs, few guardrails. In winter it closes for avalanche control. Check COtrip before you drive, and never rush it.</p></div><div class="cell"><h4>Alpine weather</h4><p>Storms build fast, especially summer afternoons &mdash; be below treeline and off summits by noon. Snow is possible any month up here; pack warm layers and a shell year-round.</p></div><div class="cell"><h4>Connectivity</h4><p>Patchy to none outside the hut. Download maps, the CAIC forecast and your directions offline before you leave town.</p></div><div class="cell"><h4>In an emergency</h4><p>Call 911. Coverage is limited &mdash; know your plan before you go out. Nearest hospitals are Montrose and Durango; Silverton has a small clinic.</p></div><div class="cell"><h4>Conditions</h4><p>CAIC for avalanche, COtrip for the highway. Both, every day, in winter.</p></div></div><div class="foot">Before you come</div></section>
+<section class="spread" id="p18"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 50 L21 22 L32 39 L40 27 L60 50 Z" fill="none" stroke="#3d6491" stroke-width="1.8"/><circle cx="48" cy="15" r="4.5" fill="none" stroke="#3d6491" stroke-width="1.8"/></svg><div class="folio">18</div><h2 class="pagetitle"><small>Worth the drive</small>Also worth your time</h2><div class="appendix"><ul class="cols"><li>Telluride &mdash; town, gondola and the box canyon</li><li>The Durango &amp; Silverton Narrow Gauge Railroad</li><li>Fall color over the passes, late September</li><li>Mesa Verde National Park, ~2 hr south</li><li>Black Canyon of the Gunnison, ~1.5 hr north</li><li>Ouray Ice Festival, January</li><li>Silverton&rsquo;s old mine tours</li><li>Hot springs at Ridgway and Pagosa</li><li>Stargazing &mdash; there is no light up here</li><li>Doing absolutely nothing on the deck</li></ul><div class="closing"><h3>Ask your host</h3><p>Everything here can be arranged &mdash; guides, avalanche courses, a catered trip, gear, or a full itinerary built around your dates, your group and the conditions.</p><p>Tell us what you&rsquo;re hoping for and we&rsquo;ll come back personally with options and an honest read on whether the conditions will suit.</p><p class="em">redmtnthelma@gmail.com<br><span class="tbd">host phone number for the guide — confirm</span></p></div></div><div class="foot">Thelma Hut · Red Mountain Pass, Silverton, CO</div></section>
+</div>
+</body>
+</html>
